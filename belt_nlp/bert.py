@@ -164,9 +164,9 @@ class BertNN(Module):
     def __init__(self, model: Union[BertModel, RobertaModel], num_labels: int):
         super().__init__()
         self.model = model
-
+        print("This is working")
         # classification head
-        self.linear = Linear(768, num_labels)
+        self.linear = Linear(128, num_labels)
 
     def forward(self, input_ids: Tensor, attention_mask: Tensor) -> Tensor:
         x = self.model(input_ids, attention_mask)
